@@ -89,3 +89,16 @@
   border-left: 1px solid grey;
   border-right: 1px solid grey;
 }
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  align-items: center;
+  align-items: stretch;
+}
+
+.button-create {
+  display:flex;
+  align-items: center;
+}
