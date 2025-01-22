@@ -240,23 +240,6 @@ const pets = [
       imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXk33yTuWvMk59IQIm6SRrnQk3fzEZbpvPcQ&s"
     }
   ]
-  const app = document.querySelector("#app")
-
-  let domString = ""
-  for (const pet of pets) {
-    domString += `<div class="card" style="width: 18rem;">
-    <div class="card-body m-0 p-0">
-      <h5 class="card-title m-0 p-1">${pet.name}</h5>
-      <img src=${pet.imageUrl} class="card-img-top p-4" alt=${pet.name}>
-      <div class="text-container">
-      <p class="card-text1 m-0 p-1">${pet.color}</p>
-      <p class="card-text m-0 p-1">${pet.specialSkill}</p>
-      <p class="card-text2 m-0 p-1">${pet.type}</p>
-      </div>
-    </div>
-  </div>
-`}
-  app.innerHTML = domString;
 
   const toDom = (divId, toRender) => {
     const selDiv = document.querySelector(divId)
@@ -274,6 +257,7 @@ const petsDom = (pets) => {
       <p class="card-text1 m-0 p-1">${pet.color}</p>
       <p class="card-text m-0 p-1">${pet.specialSkill}</p>
       <p class="card-text2 m-0 p-1">${pet.type}</p>
+      <button class="btn btn-danger mt-auto text-center" id="delete--${pet.id}">Delete</button>
       </div>
     </div>
   </div>
@@ -292,6 +276,49 @@ const filter = (pets, typeString) => {
 
   return typeArray
 }
+//CREATE
+const form = document.querySelector("form")
+
+  const createPet = (e) => {
+    e.preventDefault();
+
+    const newPet ={
+      id: pets.length + 1,
+      name: document.querySelector("#name").value,
+      color: document.querySelector("#color").value,
+      specialSkill: document.querySelector("#specialSkill").value,
+      type: document.querySelector("#type").value,
+      imageUrl: document.querySelector("#imageUrl").value
+    }
+
+    pets.push(newPet);
+    petsDom(pets);
+    form.reset();
+  }
+
+  form.addEventListener("submit", createPet);
+
+//DELETE
+  const app = document.querySelector("#app");
+
+  app.addEventListener("click", (e) => {
+
+    if (e.target.id.includes("delete")) {
+      const[, id] = e.target.id.split("--");
+
+      const index = pets.findIndex((e) => e.id === Number(id));
+
+      pets.splice(index, 1);
+
+      petsDom(pets)
+    }
+  });
+
+
+
+
+
+
 
 const allCatButton = document.querySelector("#cat-btn")
 const allDogButton = document.querySelector("#dog-btn")
@@ -316,3 +343,9 @@ allDinoButton.addEventListener("click" , () => {
 allTypesButton.addEventListener("click", () => {
   petsDom(pets)
 })
+
+const startApp = () => {
+  petsDom(pets);
+}
+
+startApp();
