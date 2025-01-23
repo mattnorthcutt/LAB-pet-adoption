@@ -88,7 +88,7 @@ body {
   background-color: lightskyblue;
   border-color: lightskyblue;
   margin-right: 10px;
-  margin-left: 109px;
+  ;
 }
 
 #dog-btn {
@@ -133,6 +133,7 @@ body {
 .button-create {
   display:flex;
   align-items: center;
+  background-color: forestgreen;
 }
 
 #delete-btn {
