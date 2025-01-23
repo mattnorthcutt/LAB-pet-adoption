@@ -1,10 +1,13 @@
+body {
+  background-image: linear-gradient(to bottom right,rgb(45, 105, 45), rgb(102, 216, 102))
+}
 #app {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
   border-color: black;
-  
+  border-top: black;
 }
 
 .card {
@@ -15,7 +18,8 @@
   border-color: aqua;
   margin: 0;
   padding: 0;
-  
+  margin-bottom: 10px;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrtxYrBHnEy60MZ_HSyQ26QW7yXHCrY4gZXg&s);
 }
 
 .text-container{
@@ -23,31 +27,39 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
+  align-items: center;
 }
 .card-text {
+  display: flex;
+  align-items: center;
   text-align: center;
+  justify-content: center;
   font-family: 'Times New Roman', Times, serif;
+  height: 80px;
+  font-weight: bold;
+  font-size: 17px;
 }
 
 .card-text1 {
   text-align: center;
+  font-weight: bold;
+  font-size: 17px;
 }
 
 .card-text2 {
   text-align: center;
   font-weight: bold;
   font-size: 20px;
+  margin-bottom: 100px;
 }
 
 .card-title {
   text-align: center;
-  background-color: lightgray;
   width: 288px;
+  height: 40px;
   margin-bottom: 100px;
-  border-top: 1px solid grey;
-  border-bottom: 1px solid grey;
-  border-left: 1px solid grey;
-  border-right: 1px solid grey;
+  border-radius: 1px;
+  font-size: 1.50rem;
 }
 
 .card-body {
@@ -59,26 +71,38 @@
 
 .container {
   display: flex;
-  justify-content: flex-start;
-  justify-content: space-evenly
+  align-items: center;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.btn-container {
+  display: flex;
+  margin: auto;
+  
 }
 
 #cat-btn {
   color: white;
   background-color: lightskyblue;
   border-color: lightskyblue;
+  margin-right: 10px;
+  margin-left: 109px;
 }
 
 #dog-btn {
   color: white;
   background-color: rgb(62, 156, 62);
   border-color: rgb(62, 156, 62);
+  margin-right: 10px;
 }
 
 #dino-btn {
   color: white;
   background-color: orange;
   border-color: orange;
+  margin-right: 10px;
 }
 
 .card-img-top {
@@ -95,10 +119,25 @@
   flex-direction: column;
   margin-bottom: 10px;
   align-items: center;
-  align-items: stretch;
+}
+
+.form-floating {
+  width: 350px;
+}
+
+#type {
+  display: flex;
+  justify-content: center;
 }
 
 .button-create {
   display:flex;
   align-items: center;
+}
+
+#delete-btn {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 15px;
 }

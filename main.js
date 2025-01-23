@@ -257,7 +257,9 @@ const petsDom = (pets) => {
       <p class="card-text1 m-0 p-1">${pet.color}</p>
       <p class="card-text m-0 p-1">${pet.specialSkill}</p>
       <p class="card-text2 m-0 p-1">${pet.type}</p>
+      <div id ="delete-btn">
       <button class="btn btn-danger mt-auto text-center" id="delete--${pet.id}">Delete</button>
+      </div>
       </div>
     </div>
   </div>
@@ -276,6 +278,38 @@ const filter = (pets, typeString) => {
 
   return typeArray
 }
+
+
+
+
+
+
+
+
+const allCatButton = document.querySelector("#cat-btn")
+const allDogButton = document.querySelector("#dog-btn")
+const allDinoButton = document.querySelector("#dino-btn")
+const allTypesButton = document.querySelector("#all-pets-btn")
+
+allCatButton.addEventListener("click", () => {
+  const catTypes = filter(pets, "Cat")
+  petsDom(catTypes)
+})
+
+allDogButton.addEventListener("click", () => {
+  const dogTypes = filter(pets, "Dog")
+  petsDom(dogTypes)
+})
+
+allDinoButton.addEventListener("click" , () => {
+  const dinoTypes = filter(pets, "Dino")
+  petsDom(dinoTypes)
+})
+
+allTypesButton.addEventListener("click", () => {
+  petsDom(pets)
+})
+
 //CREATE
 const form = document.querySelector("form")
 
@@ -316,36 +350,10 @@ const form = document.querySelector("form")
 
 
 
-
-
-
-
-const allCatButton = document.querySelector("#cat-btn")
-const allDogButton = document.querySelector("#dog-btn")
-const allDinoButton = document.querySelector("#dino-btn")
-const allTypesButton = document.querySelector("#all-pets-btn")
-
-allCatButton.addEventListener("click", () => {
-  const catTypes = filter(pets, "Cat")
-  petsDom(catTypes)
-})
-
-allDogButton.addEventListener("click", () => {
-  const dogTypes = filter(pets, "Dog")
-  petsDom(dogTypes)
-})
-
-allDinoButton.addEventListener("click" , () => {
-  const dinoTypes = filter(pets, "Dino")
-  petsDom(dinoTypes)
-})
-
-allTypesButton.addEventListener("click", () => {
-  petsDom(pets)
-})
-
 const startApp = () => {
   petsDom(pets);
 }
 
 startApp();
+
+
