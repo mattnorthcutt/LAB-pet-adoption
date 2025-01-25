@@ -279,13 +279,6 @@ const filter = (pets, typeString) => {
   return typeArray
 }
 
-
-
-
-
-
-
-
 const allCatButton = document.querySelector("#cat-btn")
 const allDogButton = document.querySelector("#dog-btn")
 const allDinoButton = document.querySelector("#dino-btn")
@@ -355,5 +348,3 @@ const startApp = () => {
 }
 
 startApp();
-
-
